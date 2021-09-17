@@ -170,7 +170,7 @@ const EventForm = ({
                 type="text"
                 name="section"
                 required
-                value={section.toLocaleUpperCase().slice(0, 1)}
+                value={section.toLocaleUpperCase().slice(0, 2)}
                 onChange={handleInputChange}
               />
             </label>
