@@ -49,7 +49,11 @@ export default function App(): ReactElement {
           <footer>
             <p>
               Developed and Maintained By:{" "}
-              <a href="https://www.instagram.com/jubayer_amb/">
+              <a
+                href="https://www.instagram.com/jubayer_amb/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 {" "}
                 Jubayer Al Mamun
               </a>{" "}

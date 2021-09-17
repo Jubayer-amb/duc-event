@@ -5,7 +5,7 @@ interface ParticipantData {
   id?: string | number;
   done?: boolean;
   pName: string;
-  roll: number;
+  roll: string;
   group: string;
   section: string;
 }

@@ -41,7 +41,6 @@ body {
 }
 .App {
   position: relative;
-  /* top: 3vh; */
   margin-top: 2em;
   text-align: center;
 }
@@ -56,10 +55,10 @@ body {
   color: #00ff95;
   letter-spacing: 1px;
   transition: all 0.5s linear;
-  transform: translateY(-200%);
+  transform: translateY(-250%);
 }
 .show {
-  transform: translateY(0%);
+  transform: translateY(5%);
 }
 
 h1 {
@@ -71,14 +70,18 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 10px;
+  position: relative;
+  top: 8em;
   text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-height: 720px) {
   .App {
     top: 0;
     margin-top: 0.5em;
+  }
+  .show {
+    transform: translateY(200%);
+    z-index: 1;
   }
 }

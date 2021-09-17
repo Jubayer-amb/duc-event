@@ -50,6 +50,8 @@ const ParticipantsList = ({
       setList(datas.docs);
     });
   }, []);
+  // defining serial for first coloumn of the table
+  let serial = 0;
   return (
     <div>
       {isLoading && <H1>Loading...</H1>}
@@ -57,6 +59,7 @@ const ParticipantsList = ({
         <Table>
           <thead>
             <tr>
+              <th>Sl.</th>
               <th>Name</th>
               <th>Roll</th>
               <th>Section</th>
@@ -64,14 +67,18 @@ const ParticipantsList = ({
             </tr>
           </thead>
           <tbody>
-            {list.map((doc) => (
-              <tr key={doc.id}>
-                <td>{doc.data().pName}</td>
-                <td>{doc.data().roll}</td>
-                <td>{doc.data().section}</td>
-                <td>{doc.data().group}</td>
-              </tr>
-            ))}
+            {list.map((doc) => {
+              serial += 1;
+              return (
+                <tr key={doc.id}>
+                  <td>{serial}</td>
+                  <td>{doc.data().pName}</td>
+                  <td>{doc.data().roll}</td>
+                  <td>{doc.data().section}</td>
+                  <td>{doc.data().group}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       )}

@@ -75,14 +75,14 @@ const EventForm = ({
 }: EventFormProps): ReactElement => {
   interface InitialState {
     pName: string;
-    roll: number;
+    roll: string;
     group: string;
     section: string;
     shift: string;
   }
   const initialState: InitialState = {
     pName: "",
-    roll: 0,
+    roll: "",
     group: "",
     section: "",
     shift: "",
@@ -119,17 +119,6 @@ const EventForm = ({
     }, 1500);
   };
 
-  const validateRoll = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    // console.log(e.target);
-
-    return e;
-
-    //   if (e.target.value) {
-    //     return false;
-    //   }
-    //   return true;
-  };
-
   return (
     <>
       <Div>
@@ -153,10 +142,7 @@ const EventForm = ({
                 type="number"
                 name="roll"
                 required
-                pattern="/^-?\d+\.?\d*$/"
-                maxLength={6}
-                value={roll}
-                onKeyPress={validateRoll}
+                value={roll.toString().slice(0, 6)}
                 onChange={handleInputChange}
               />
             </label>
@@ -183,9 +169,8 @@ const EventForm = ({
               <input
                 type="text"
                 name="section"
-                maxLength={1}
                 required
-                value={section}
+                value={section.toLocaleUpperCase().slice(0, 1)}
                 onChange={handleInputChange}
               />
             </label>
